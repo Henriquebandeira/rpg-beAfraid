@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>RPG - BE AFRAID</title>
+    <script>
+        const lugares = ["vilarejo, bairro, distrito", "ruinas, abandonado, esquecido", "floresta, selva",
+        "deserto, inabitavel, vazio", "reino, capital, estação", "montanha, penhasco, desfiladeiro",
+        "rio, oceano, espaço", "nação, país, planeta", "aldeia, cabana, base"];
+
+        const encontros = ["ferido, morto", "nada", "monstro, selvagem, alienigena", "amigavel, gentil",
+        "não amigavel, rude", "emboscada, armadilha", "artefato, tesouro", "corte, politico, comandante",
+        "outra raça (elfo, anões, robos, etc...)"];
+
+        const caracteristicas = ["magico, tecnologico", "realeza, governo", "bom, santo, angelical",
+        "maligno, demoniaco, necromancia", "poderoso", "desconhecido", "antigo, velho", "normal, comum",
+        "perigoso"];
+
+        function random()
+        {
+            var numb1 = Math.round(Math.random() * 8);
+            document.getElementById('lugares').innerHTML = lugares[numb1];
+
+            var numb2 = Math.round(Math.random() * 8);
+            document.getElementById('encontros').innerHTML = encontros[numb2];
+
+            var numb3 = Math.round(Math.random() * 8);
+            document.getElementById('caracteristicas').innerHTML = caracteristicas[numb3];
+
+            var numb4 = Math.round(Math.random() * 5) + 1;
+            document.getElementById('d6').innerHTML = numb4;
+        }
+
+
+    </script>
+
+    <style>
+        html, body {
+            background-color: black;
+            text-align: center
+
+        }
+        
+        h1, h3, p {
+              color: #6f6f6f;
+              padding: 10px;      
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Basteleur-Bold';
+            src: url('./Basteleur-Bold.ttf');
+        }
+
+        h1, h3 {
+            font-family: Basteleur-Bold;
+        }
+
+        h3 {
+            margin-left: 35%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body onclick="random()">
+    <h3>LUGAR:</h3>
+    <p id="lugares">. . .</p>
+
+    <h3>ENCONTRO:</h3>
+    <p id="encontros">. . .</p>
+
+    <h3>CARACTERISTICA:</h3>
+    <p id="caracteristicas">. . .</p>
+
+    <h1 id="d6"></h1>
+</body>
+</html>
